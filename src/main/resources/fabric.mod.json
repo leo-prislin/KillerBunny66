@@ -1,0 +1,54 @@
+{
+	"schemaVersion": 1,
+	"id": "killerbunny66",
+	"version": "${version}",
+	"name": "KillerBunny66",
+	"description": "This is an experimental test mod.",
+	"authors": [
+		"Wattestaebchen"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/killerbunny66/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "de.wattestaebchen.killerbunny66.KillerBunny66",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "de.wattestaebchen.killerbunny66.KillerBunny66Client",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "de.wattestaebchen.killerbunny66.KillerBunny66DataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"killerbunny66.mixins.json",
+		{
+			"config": "killerbunny66.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.3",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.9.22"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
